@@ -1,0 +1,8 @@
+# Linux test
+sudo ufw status verbose
+nc -vz 127.0.0.1 23
+# Result: Connection refused
+
+# Windows test
+Test-NetConnection -ComputerName 127.0.0.1 -Port 23
+# Result: TcpTestSucceeded : False
