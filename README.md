@@ -2,7 +2,6 @@
 
 **Objective:** Apply and test inbound/outbound rules on Linux (UFW) and Windows (PowerShell).
 
----
 
 ## Linux – UFW Commands
 ```bash
@@ -30,7 +29,6 @@ Remove the test rule
 sudo ufw delete deny 23/tcp
 
 
----
 
 Windows – PowerShell Commands
 
@@ -47,7 +45,6 @@ Test-NetConnection -ComputerName 127.0.0.1 -Port 23
 Remove-NetFirewallRule -DisplayName "Block Telnet"
 
 
----
 
 Expected Output
 
@@ -58,3 +55,21 @@ To                         Action      From
 23/tcp                     DENY        Anywhere
 
 Telnet connection → Connection refused ✅
+
+Outcome
+
+Configured and verified firewall rules to control inbound network traffic and block insecure services.
+
+
+### ➤ Add file → `firewall_commands.txt`
+Paste:
+```txt
+# Linux UFW
+sudo ufw status
+sudo ufw deny 23/tcp
+sudo ufw allow 22/tcp
+sudo ufw delete deny 23/tcp
+
+# Windows PowerShell
+New-NetFirewallRule -DisplayName "Block Telnet" -Direction Inbound -LocalPort 23 -Protocol TCP -Action Block
+Remove-NetFirewallRule -DisplayName "Block Telnet"
