@@ -57,13 +57,8 @@ To                         Action      From
 Telnet connection → Connection refused ✅
 
 Outcome
-
 Configured and verified firewall rules to control inbound network traffic and block insecure services.
 
-
-### ➤ Add file → `firewall_commands.txt`
-Paste:
-```txt
 # Linux UFW
 sudo ufw status
 sudo ufw deny 23/tcp
